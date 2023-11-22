@@ -20,7 +20,7 @@ const Navbar = (props: any) => {
     }
 
     return (
-        <div className={`w-[100%] fixed flex flex-col justify-center items-center md:p-1 text-[#333] bg-[#fbfbfb] border-b-[1px] ${openSans.className}`}>
+        <div className={`w-[100%] md:h-auto fixed flex flex-col justify-center items-center md:p-1 text-[#333] bg-[#fbfbfb] border-b-[1px] ${openSans.className}`}>
             <div className='flex flex-col md:flex-row w-[100vw] md:w-[60vw] h-auto md:p-0 justify-between items-center'>
                 <Image
                     className='p-3 ml-auto md:ml-0 h-15 hidden md:block' 

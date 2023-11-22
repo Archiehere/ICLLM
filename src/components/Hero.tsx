@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <div className='flex w-[100%] h-[100vh]'>
+    <div className='flex w-[100%] h-[80vh] md:h-[100vh]'>
         <div className={`text-white mt-[10vh] h-[90vh] w-[50vw] bg-[#191919] hidden md:flex md:flex-col justify-center ${ptSans.className}`}>
             <div className='w-[80%] ml-auto'>
               <div className='text-[2rem] lg:text-[2.5rem] font-bold tracking-widest py-10 leding-[2rem] lg:leading-[3.5rem] w-[85%]'>
@@ -27,7 +27,7 @@ const Hero = () => {
             width={730}
             height={730}
          />
-         <div className='mt-[20vh] md:hidden text-white' style={{
+         <div className='mt-[15vh] sm:mt-[18vh] md:hidden text-white' style={{
           backgroundImage: 'url("conf.png")'
          }}>
             <div className='w-[80%] ml-5'>
