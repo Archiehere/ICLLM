@@ -4,6 +4,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { openSans, oswald } from '../utils/fonts'
 
+const navLinks = [
+    { name: 'Home', link: '#' },
+    { name: 'About AKGEC', link: '#aboutakg' },
+    { name: 'Comittee', link: '#comittee' },
+    { name: 'Keynote Speakers', link: '#speakers' },
+]
+
 const Navbar = (props: any) => {
     const {page=''} = props
     const [expanded, setExpanded] = React.useState(false)
@@ -14,7 +21,7 @@ const Navbar = (props: any) => {
 
     return (
         <div className={`w-[100%]  fixed flex flex-col justify-center items-center md:p-1 text-[#333] bg-[#fbfbfb] border-b-[1px] ${openSans.className}`}>
-            <div className='flex w-[55vw] h-[10vh] md:p-0 border-b-[1px] justify-between items-center'>
+            <div className='flex w-[100vw] md:w-[55vw] h-[10vh] md:p-0 justify-between items-center'>
                 <Image
                     className='px-1 py-1 ml-auto md:ml-0 h-15  hidden md:block' 
                     src='Azadi.svg'
@@ -30,7 +37,7 @@ const Navbar = (props: any) => {
                     height={70}
                 />
                 <div className='flex-col px-2'>
-                    <div className={`font-sans font-bold text-sm md:text-xs lg:text-sm w-[40%]  md:w-auto ${oswald.className}`}>AJAY KUMAR GARG ENGINEERING COLLEGE</div>
+                    <div className={`font-sans font-bold text-sm md:text-xs lg:text-sm w-auto ${oswald.className}`}>Ajay Kumar Garg Engineering College</div>
                     <div className='text-xs  hidden md:block'>(Affiliated to Dr. APJ Abdul Kalam Technical University, Lucknow, UP, College Code - 027)</div>
                 </div>
                 <Image
@@ -41,7 +48,7 @@ const Navbar = (props: any) => {
                     height={70}
                 />
                 <Image
-                    className='px-1 py-1 ml-auto md:ml-0 h-15  hidden md:block' 
+                    className='px-1 py-1 ml-auto md:ml-0 h-15 hidden md:block' 
                     src='NAAC.svg'
                     alt='NAAC'
                     width={70}
@@ -64,30 +71,24 @@ const Navbar = (props: any) => {
                     />}
                 </div>
             </div>
-            <ul className={`flex flex-col md:flex-row [&>*]:mb-1 [&>*]:mt-[24px] md:[&>*]:mt-0 md:[&>*]:mb-0 w-[100vw] py-1 justify-center items-center text-[12px] lg:text-[16px] ${(!(expanded)?'hidden':'')} md:flex`}>
-                <li>
+            <div className={`flex flex-col border-t-[1px] md:flex-row [&>*]:mb-1 [&>*]:mt-[24px] md:[&>*]:mt-0 md:[&>*]:mb-0 w-[100vw] py-1 justify-center items-center text-[12px] lg:text-[16px] ${(!(expanded)?'hidden':'')} md:flex`}>
+                <div>
                 <Image
-                    className='px-1 mr-6 pt-1' 
+                    className='px-1 mr-6 pt-1 hidden md:block' 
                     src='ICLLM.svg'
                     alt='ICLLM'
                     width={90}
                     height={40}
                 />
-                </li>
-                <li className={"hover:font-bold w-[9rem] text-center "+((page==="home")?"font-bold":"")}>
-                    <Link href="/">Home</Link>
-                </li>
-                <li className={'hover:font-bold w-[12rem] text-center '+((page=='patroninchief')?"font-bold":"")}>
-                    <Link href="/patroninchief">About AKGEC</Link>
-                </li>
-                <li className={'hover:font-bold w-[12rem] text-center '+((page=='editorialteam')?"font-bold":"")}>
-                    <Link href="/editorialteam ">Committee</Link>
-                </li>
-                <li className={'hover:font-bold w-[12rem] text-center '+((page=='editorialboard')?"font-bold":"")}>
-                    <Link href="/editorialboard">Keynote Speakers</Link>
-                </li>
-                
-            </ul>
+                </div>
+                {navLinks.map((link, index) => {
+                    return (
+                        <Link key={index} className={"hover:font-bold w-[9rem] text-center "+((page==="home")?"font-bold":"")} href={link.link}>
+                            {link.name}
+                        </Link>
+                    )
+                })}
+            </div>
         </div>
     )
 }
