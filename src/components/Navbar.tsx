@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { openSans, oswald } from '../utils/fonts'
+import { openSans, ptSans } from '../utils/fonts'
 
 const navLinks = [
     { name: 'Home', link: '#' },
@@ -20,15 +20,16 @@ const Navbar = (props: any) => {
     }
 
     return (
-        <div className={`w-[100%]  fixed flex flex-col justify-center items-center md:p-1 text-[#333] bg-[#fbfbfb] border-b-[1px] ${openSans.className}`}>
-            <div className='flex w-[100vw] md:w-[55vw] h-[10vh] md:p-0 justify-between items-center'>
+        <div className={`w-[100%] fixed flex flex-col justify-center items-center md:p-1 text-[#333] bg-[#fbfbfb] border-b-[1px] ${openSans.className}`}>
+            <div className='flex flex-col md:flex-row w-[100vw] md:w-[60vw] h-auto md:p-0 justify-between items-center'>
                 <Image
-                    className='p-3 ml-auto md:ml-0 h-15  hidden md:block' 
+                    className='p-3 ml-auto md:ml-0 h-15 hidden md:block' 
                     src='Azadi.svg'
                     alt='Azadi'
                     width={70}
                     height={70}
                 />
+                <div className='flex justify-center items-center'>
                 <Image
                     className='p-3 ml-auto md:ml-0 h-15' 
                     src='akglogo.svg'
@@ -36,9 +37,10 @@ const Navbar = (props: any) => {
                     width={70}
                     height={70}
                 />
-                <div className='flex-col px-2'>
-                    <div className={`font-sans font-bold text-sm md:text-xs lg:text-sm w-auto ${oswald.className}`}>Ajay Kumar Garg Engineering College</div>
-                    <div className='text-xs  hidden md:block'>(Affiliated to Dr. APJ Abdul Kalam Technical University, Lucknow, UP, College Code - 027)</div>
+                <div className='flex-col px-2 w-full'>
+                    <div className={`font-sans font-bold text-sm md:text-lg w-auto ${ptSans.className}`}>Ajay Kumar Garg Engineering College</div>
+                    <div className='text-xs  md:hidden lg:block'>(Affiliated to Dr. APJ Abdul Kalam Technical University, Lucknow, UP, College Code - 027)</div>
+                </div>
                 </div>
                 <Image
                     className='px-1 py-1 ml-auto md:ml-0 h-15 hidden md:block' 
@@ -54,21 +56,30 @@ const Navbar = (props: any) => {
                     width={70}
                     height={70}
                 />
-                <div className={`py-7 px-8 ml-auto border-l-[1px] ${(expanded?'':'')} md:hidden`} onClick={handleClick}>
-                    {
-                    !(expanded)?
+                <div className='flex w-full pl-5 md:hidden'>
                     <Image
-                        src='ham.svg'
-                        alt='ham-menu'
-                        width={20}
-                        height={20}
-                    />:
-                    <Image
-                        src='cross.svg'
-                        alt='cross'
-                        width={20}
-                        height={20}
-                    />}
+                        className='mr-6' 
+                        src='icllm-sm.svg'
+                        alt='ICLLM'
+                        width={123}
+                        height={38}
+                    />
+                    <div className={`py-6 px-8 ml-auto`} onClick={handleClick}>
+                        {
+                        !(expanded)?
+                        <Image
+                            src='ham.svg'
+                            alt='ham-menu'
+                            width={23}
+                            height={23}
+                        />:
+                        <Image
+                            src='cross.svg'
+                            alt='cross'
+                            width={25}
+                            height={25}
+                        />}
+                    </div>
                 </div>
             </div>
             <div className={`flex flex-col border-t-[1px] md:flex-row [&>*]:mb-1 [&>*]:mt-[24px] md:[&>*]:mt-0 md:[&>*]:mb-0 w-[100vw] py-1 justify-center items-center text-[12px] lg:text-[16px] ${(!(expanded)?'hidden':'')} md:flex`}>
@@ -77,8 +88,8 @@ const Navbar = (props: any) => {
                         className='mr-6' 
                         src='ICLLM.svg'
                         alt='ICLLM'
-                        width={100}
-                        height={45}
+                        width={123}
+                        height={38}
                     />
                 </div>
                 {navLinks.map((link, index) => {
