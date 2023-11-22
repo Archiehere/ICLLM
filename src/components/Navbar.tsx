@@ -23,14 +23,14 @@ const Navbar = (props: any) => {
         <div className={`w-[100%]  fixed flex flex-col justify-center items-center md:p-1 text-[#333] bg-[#fbfbfb] border-b-[1px] ${openSans.className}`}>
             <div className='flex w-[100vw] md:w-[55vw] h-[10vh] md:p-0 justify-between items-center'>
                 <Image
-                    className='px-1 py-1 ml-auto md:ml-0 h-15  hidden md:block' 
+                    className='p-3 ml-auto md:ml-0 h-15  hidden md:block' 
                     src='Azadi.svg'
                     alt='Azadi'
                     width={70}
                     height={70}
                 />
                 <Image
-                    className='px-1 py-1 ml-auto md:ml-0 h-15 ' 
+                    className='p-3 ml-auto md:ml-0 h-15' 
                     src='akglogo.svg'
                     alt='akglogo'
                     width={70}
@@ -41,7 +41,7 @@ const Navbar = (props: any) => {
                     <div className='text-xs  hidden md:block'>(Affiliated to Dr. APJ Abdul Kalam Technical University, Lucknow, UP, College Code - 027)</div>
                 </div>
                 <Image
-                    className='px-1 py-1 ml-auto md:ml-0 h-15  hidden md:block' 
+                    className='px-1 py-1 ml-auto md:ml-0 h-15 hidden md:block' 
                     src='25Years.svg'
                     alt='25Years'
                     width={70}
@@ -72,18 +72,18 @@ const Navbar = (props: any) => {
                 </div>
             </div>
             <div className={`flex flex-col border-t-[1px] md:flex-row [&>*]:mb-1 [&>*]:mt-[24px] md:[&>*]:mt-0 md:[&>*]:mb-0 w-[100vw] py-1 justify-center items-center text-[12px] lg:text-[16px] ${(!(expanded)?'hidden':'')} md:flex`}>
-                <div>
-                <Image
-                    className='px-1 mr-6 pt-1 hidden md:block' 
-                    src='ICLLM.svg'
-                    alt='ICLLM'
-                    width={90}
-                    height={40}
-                />
+                <div className='hidden md:block'>
+                    <Image
+                        className='mr-6' 
+                        src='ICLLM.svg'
+                        alt='ICLLM'
+                        width={100}
+                        height={45}
+                    />
                 </div>
                 {navLinks.map((link, index) => {
                     return (
-                        <Link key={index} className={"hover:font-bold w-[9rem] text-center "+((page==="home")?"font-bold":"")} href={link.link}>
+                        <Link key={index} className={"hover:font-bold w-[9rem] text-sm text-center "+((page==="home")?"font-bold":"")} href={link.link}>
                             {link.name}
                         </Link>
                     )
