@@ -5,8 +5,8 @@ import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <div className='flex w-[100%] h-[80vh] md:h-[100vh]'>
-        <div className={`text-white mt-[10vh] h-[90vh] w-[50vw] bg-[#191919] hidden md:flex md:flex-col justify-center ${ptSans.className}`}>
+    <div className='flex w-[100%] h-[90vh] xs:h-[80vh] lg:h-[100vh]'>
+        <div className={`text-white mt-[10vh] h-auto w-[50vw] bg-[#191919] hidden md:flex md:flex-col justify-center ${ptSans.className}`}>
             <div className='w-[80%] ml-auto'>
               <div className='text-[2rem] lg:text-[2.5rem] font-bold tracking-widest py-10 leding-[2rem] lg:leading-[3.5rem] w-[85%]'>
                 INTERNATIONAL CONFERENCE ON LARGE LANGUAGE MODELS
@@ -21,13 +21,13 @@ const Hero = () => {
             </div>
         </div>
         <Image
-            className='mt-[10vh] w-[50vw] h-[90vh] hidden md:block'
+            className='mt-[10vh] w-[50vw] h-auto hidden md:block'
             src='/conf.png'
             alt='hero'
             width={730}
             height={730}
          />
-         <div className='mt-[15vh] sm:mt-[18vh] md:hidden text-white' style={{
+         <div className='mt-[20vh] xs:mt-[15vh] md:hidden text-white' style={{
           backgroundImage: 'url("conf.png")'
          }}>
             <div className='w-[80%] ml-5'>
