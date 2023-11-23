@@ -22,7 +22,7 @@ const AboutAkgec = () => {
                 Science & Engineering, Electronics  Communication Engineering, Electrical and
                 Electronics Engineering, Mechanical Engineering and Automation & Robotics. The college strives for excellence and has been consistently maintaining excellent academic results and placements.
             </div>
-            <Link href='https://www.akgec.ac.in/about/' className='text-xs text-[#1983FF] px-12 py-4 border border-[#1983FF]'>Read More...</Link>
+            <Link target="_blank" href='https://www.akgec.ac.in/about/' className='text-xs text-[#1983FF] px-12 py-4 border border-[#1983FF]'>Read More...</Link>
         </div>
         <div className='w-[40%] hidden md:block'>
         <Image
