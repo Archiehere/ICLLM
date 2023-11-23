@@ -94,7 +94,7 @@ const Navbar = (props: any) => {
                 </div>
                 {navLinks.map((link, index) => {
                     return (
-                        <Link key={index} className={"hover:font-bold w-[9rem] text-sm text-center "+((page==="home")?"font-bold":"")} href={link.link}>
+                        <Link key={index} onClick={handleClick} className={"hover:font-bold w-[9rem] text-sm text-center"+((page==="home")?"font-bold":"")} href={link.link}>
                             {link.name}
                         </Link>
                     )
