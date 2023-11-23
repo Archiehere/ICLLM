@@ -6,7 +6,7 @@ import { ptSans } from '@/utils/fonts'
 const AboutAkgec = () => {
   return (
     <div id='aboutakg'  className={`flex flex-col md:flex-row ${ptSans.className}`}>
-        <div className='w-full md:w-[60%] p-4 pt-[10vh] md:p-[4rem] md:pr-[6rem]'>
+        <div className='w-full md:w-[60%] p-4 pt-[10vh] md:p-[4rem] md:pr-[6rem] pb-10'>
             <div className='text-4xl font-semibold'>About Akgec</div>
             <Image
              className='pt-10 md:hidden'
@@ -23,7 +23,7 @@ const AboutAkgec = () => {
                 Electronics Engineering, Mechanical Engineering and Automation & Robotics. The college strives for excellence and has been consistently maintaining excellent academic results and placements.
             </div>
             <Link href='https://www.akgec.ac.in/about/' className='text-xs text-[#1983FF] px-12 py-4 border border-[#1983FF]'>Read More...</Link>
-            </div>
+        </div>
         <div className='w-[40%] hidden md:block'>
         <Image
             className='py-10 pr-16'
